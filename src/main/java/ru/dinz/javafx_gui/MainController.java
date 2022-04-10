@@ -55,21 +55,12 @@ public class MainController {
         void initialize(ActionEvent event) {
             final FileChooser fileChooser = new FileChooser();
             addPDFButton.setOnAction(actionEvent -> {
-                pdfList.add(new PDF());
+                //pdfList.add(new PDF());
                 //tableName.setCellValueFactory(new PropertyValueFactory<Employee, String>("Name"));
                 //tableAge.setCellValueFactory(new PropertyValueFactory<Employee, Integer>("Age"));
                 tableName.setCellValueFactory(new PropertyValueFactory<PDF, String>("Name"));
                 tableAge.setCellValueFactory(new PropertyValueFactory<PDF, Integer>("Age"));
                 table.setItems(pdfs);
-            });
-            addPDFButton.setOnAction(new EventHandler<ActionEvent>() {
-
-                @Override
-                public void handle(ActionEvent event) {
-                    List<File> files = fileChooser.showOpenMultipleDialog(primaryStage);
-
-                    printLog(textArea, files);
-                }
             });
         }
 
